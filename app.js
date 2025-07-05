@@ -6,6 +6,7 @@ class DataManager{
 
         this.form.addEventListener("submit", (e) => this.addData(e));
         this.elementsList.addEventListener("click", this.deleteData.bind(this));
+        this.elementsList.addEventListener("click", this.editData.bind(this));
 
         this.renderData();
     }
@@ -38,6 +39,17 @@ class DataManager{
         }
     }
 
+    editData(e) {
+        if (e.target.classList.contains("editar")) {
+            const index = e.target.dataset.index;
+            this.form.name.value = this.data[index].name;
+            this.form.description.value = this.data[index].description;
+            this.data.splice(index, 1);
+            this.saveData();
+            this.renderData();
+        }
+    }
+
     renderData() {
         this.elementsList.innerHTML = "";
 
@@ -51,7 +63,8 @@ class DataManager{
             div.classList.add("item");
             div.innerHTML = `
                 <strong>${item.name}</strong><br>
-                ${item.description}<br>
+                <span>${item.description}</span><br>
+                <button class="editar" data-index="${index}">Editar</button>
                 <button class="eliminar" data-index="${index}">Eliminar</button>
             `;
             this.elementsList.appendChild(div);
