@@ -1,0 +1,63 @@
+class DataManager{
+    constructor() {
+        this.data = JSON.parse(localStorage.getItem("dataCrud")) || [];
+        this.elementsList = document.getElementById("items-list");
+        this.form = document.getElementById("form");
+
+        this.form.addEventListener("submit", (e) => this.addData(e));
+        this.elementsList.addEventListener("click", this.deleteData.bind(this));
+
+        this.renderData();
+    }
+
+    saveData() {
+        localStorage.setItem("dataCrud", JSON.stringify(this.data));
+    }
+
+    addData(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const description = document.getElementById("description").value.trim();
+
+        if (!name || !description) return;
+
+        const newTask = {name, description};
+
+        this.data.push(newTask);
+        this.saveData();
+        this.renderData();
+        this.form.reset();
+    }
+
+    deleteData(e) {
+        if (e.target.classList.contains("eliminar")) {
+            const index = e.target.dataset.index;
+            this.data.splice(index, 1);
+            this.saveData();
+            this.renderData();
+        }
+    }
+
+    renderData() {
+        this.elementsList.innerHTML = "";
+
+        if (this.data.length === 0) {
+            this.elementsList.innerHTML = "<p>No hay elementos guardados.</p>";
+            return;
+        }
+
+        this.data.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.classList.add("item");
+            div.innerHTML = `
+                <strong>${item.name}</strong><br>
+                ${item.description}<br>
+                <button class="eliminar" data-index="${index}">Eliminar</button>
+            `;
+            this.elementsList.appendChild(div);
+            });
+    }
+
+}
+
+new DataManager();
