@@ -1,8 +1,9 @@
 # crudAppCAdvance
-Repositorio para trabajo grupal de una Crud App
+Repositorio para trabajo grupal de una Crud App 
 # 📝 CRUD en LocalStorage
+Autores - Lina , Francisco Tulcan , Juan Pablo Barahona 🧠🚀✨
 
-Este es un proyecto simple de CRUD (Crear, Leer, Actualizar, Eliminar) construido con **HTML**, **CSS** y **JavaScript**, que almacena los datos en el **LocalStorage** del navegador. Cuenta con una interfaz moderna y responsive.
+Este es un proyecto simple de CRUD (Crear, Leer, Actualizar, Eliminar) construido con **HTML**, **CSS** y **JavaScript**, que almacena los datos en el **LocalStorage** del navegador. Cuenta con una interfaz moderna 
 
 ---
 
