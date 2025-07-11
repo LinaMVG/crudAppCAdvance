@@ -62,10 +62,14 @@ class DataManager{
             const div = document.createElement("div");
             div.classList.add("item");
             div.innerHTML = `
-                <strong>${item.name}</strong><br>
-                <span>${item.description}</span><br>
-                <button class="editar" data-index="${index}">Editar</button>
-                <button class="eliminar" data-index="${index}">Eliminar</button>
+                <div class="item-content">
+                    <div class="item-title">${item.name}</div>
+                    <div class="item-description">${item.description}</div>
+                </div>
+                <div class="item-actions">
+                    <button class="editar" data-index="${index}">Editar</button>
+                    <button class="eliminar" data-index="${index}">Eliminar</button>
+                </div>
             `;
             this.elementsList.appendChild(div);
             });
