@@ -1,7 +1,8 @@
 # crudAppCAdvance
 Repositorio para trabajo grupal de una Crud App 
+
 # 📝 CRUD en LocalStorage
-Autores - Lina , Francisco Tulcan , Juan Pablo Barahona 🧠🚀✨
+Autores - Lina M Velásquez , Francisco Tulcan , Juan Pablo Barahona 🧠🚀✨
 
 Este es un proyecto simple de CRUD (Crear, Leer, Actualizar, Eliminar) construido con **HTML**, **CSS** y **JavaScript**, que almacena los datos en el **LocalStorage** del navegador. Cuenta con una interfaz moderna 
 
@@ -15,9 +16,11 @@ http://127.0.0.1:3000/index.html
 
 ## 🖼️ Captura del proyecto
 
-![Captura del proyecto](./screenshot.png)
+### Vista principal de la CrudApp
+![Captura del proyecto](./assets/Principal.png)
 
-
+### Vista ejemplifica al agregar y listar tareas
+![Ejemplo CrudApp](./assets/Ejemplo.png)
 
 ---
 
@@ -41,4 +44,29 @@ http://127.0.0.1:3000/index.html
 ---
 
 ## 📂 Estructura del proyecto
+```
+crudAppCAdvance/
+│
+├── index.html
+├── style.css
+├── app.js
+└── README.md
+```
 
+---
+## ⚙️ Instalación y uso
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/tuusuario/crudAppCAdvance.git
+   ```
+2. **Abre la carpeta en tu editor de código.**
+3. **Abre `index.html` en tu navegador.**
+
+---
+
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas! Por favor, abre un issue o haz un pull request.
+
+---
