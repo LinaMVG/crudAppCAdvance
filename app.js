@@ -16,21 +16,14 @@ class DataManager{
     async handleLogin(event) {
     event.preventDefault();
 
-    fetch("http://localhost:3000/api/auth/login", {
+    try {        
+        const res = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: "test@demo.com", password: "123456" })
-        }).then(r => r.json()).then(console.log);
-
-    try {
-        
-        // const res = await fetch("http://localhost:3000/api/auth/login", {
-        // method: "POST",
-        // headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify({
-        //     email: this.email.value,
-        //     password: this.password.value,
-        // }),
+        body: JSON.stringify({
+            email: this.email.value,
+            password: this.password.value,
+        }),
         });
 
         if (!res.ok) {
