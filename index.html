@@ -4,67 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="assets/icon-crud-app.png" type="image/x-icon">
-  <title>TASKZEEN | Gestor de Tareas</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+  <title>TaskZeen - Login</title>
 </head>
 <body>
+  <section>
+    <h1>Login - TaskZeen</h1>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit" id="loginButton">
+        <span id="buttonText">Ingresar</span>
+      </button>
+    </form>
 
-  <header>
-    <h1>TaskZeen - Gestión de Tareas</h1>
-  </header>
+    <div id="errorMessage" class="error-message"></div>
+    <div id="successMessage" class="success-message"></div>
 
-  <main>
-    <section class="formZone" id="formZone">
-      <form class="form" id="form">
-        <p>Tarea: <input type="text" id="name" required placeholder="Ingrese el nombre de la tarea"></p>
-        <p>Descripción: <input type="text" id="description" required placeholder="Ingrese la descripción de la tarea"></p>
-        <p>Categoría: 
-          <select id="category">
-            <option value="Trabajo">Trabajo</option>
-            <option value="Estudio">Estudio</option>
-            <option value="Personal">Personal</option>
-            <option value="Salud">Salud</option>
-            <option value="Otros">Otros</option>
-          </select>
-        </p>
-        <p>Fecha de vencimiento: <input type="date" id="dueDate"></p>
-        <button class="btnSend" type="submit">Guardar</button>
-      </form>
-    </section>
-
-    <section class="data" id="data">
-      <h2>Lista de tareas</h2>
-
-      <div class="filters">
-        <label for="filter-category">Filtrar por categoría:</label>
-        <select id="filter-category">
-          <option value="all">Todas</option>
-          <option value="Trabajo">Trabajo</option>
-          <option value="Estudio">Estudio</option>
-          <option value="Personal">Personal</option>
-          <option value="Salud">Salud</option>
-          <option value="Otros">Otros</option>
-        </select>
-
-        <label for="filter-status">Estado:</label>
-        <select id="filter-status">
-          <option value="all">Todas</option>
-          <option value="completed">Completadas</option>
-          <option value="pending">Pendientes</option>
-        </select>
-
-        <button id="filter-button">Filtrar</button>
-        <button id="clear-filters">Limpiar</button>
-      </div>
-
-      <div class="items-list" id="items-list"></div>
-    </section>
-  </main>
+    <div class="register-link">
+      <p>¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+    </div>
+  </section>
 
   <footer>
-    <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>
+        <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
   </footer>
-
-  <script src="app.js"></script>
+   <script src="auth.js"></script>
 </body>
 </html>

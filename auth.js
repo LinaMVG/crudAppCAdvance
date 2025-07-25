@@ -51,7 +51,7 @@ class AuthManager {
             }
             if (this.errorMessage) this.errorMessage.style.display = "none";
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "dashboard.html";
             }, 1200);
         } catch (err) {
             console.error("Error al loguear:", err);
