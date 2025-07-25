@@ -4,39 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="assets/icon-crud-app.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="register.css">
   <title>TaskZeen - Register</title>
+
 </head>
 <body>
-  <section>
-    <h1>Register - TaskZeen</h1>
-    <form id="registerForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+  <div class="container">
+    <div class="register-card">
+      <div class="register-header">
+        <h1 class="register-title">TaskZeen</h1>
+        <p class="register-subtitle">Crea tu cuenta nueva</p>
+      </div>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <form id="registerForm">
+        <div id="errorMessage" class="message error-message"></div>
+        <div id="successMessage" class="message success-message"></div>
 
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+          <div class="field-error" id="emailError"></div>
+        </div>
 
-      <button type="submit" id="registerButton">
-        <span id="buttonText">Registrarse</span>
-      </button>
-    </form>
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" name="password" class="form-input" required>
+          <div class="password-strength">
+            <div class="strength-indicator">
+              <div class="strength-bar" id="strengthBar"></div>
+            </div>
+            <span id="strengthText">Ingresa una contraseña</span>
+          </div>
+          <div class="field-error" id="passwordError"></div>
+        </div>
 
-    <div id="errorMessage" class="error-message"></div>
-    <div id="successMessage" class="success-message"></div>
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+          <div class="field-error" id="confirmPasswordError"></div>
+        </div>
 
-    <div class="login-link">
-      <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        <button type="submit" id="registerButton" class="register-button">
+          <span id="buttonText">Crear Cuenta</span>
+        </button>
+      </form>
+
+      <div class="login-link">
+        <p>¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a></p>
+      </div>
     </div>
-  </section>
+  </div>
 
   <footer>
-        <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
+    <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
   </footer>
-  <script src="app.js"></script>
+
+  <script src="register.js"></script>
 </body>
 </html>
