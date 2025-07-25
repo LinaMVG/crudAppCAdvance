@@ -70,3 +70,9 @@ crudAppCAdvance/
 ¡Las contribuciones son bienvenidas! Por favor, abre un issue o haz un pull request.
 
 ---
+## Autores
+
+Equipo #3
+- [Lina Marcela Velásquez Garzón](https://github.com/LinaMVG)
+- [Francisco Javier Tulcán Rodríguez ](https://github.com/FranciscoTulkn)
+- [Juan Pablo Barahona](https://github.com/juan112812)
