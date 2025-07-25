@@ -11,18 +11,23 @@ constructor() {
         this.data = [];
         this.elementsList = document.getElementById("items-list");
         this.form = document.getElementById("form");
+        this.filterCategory = document.getElementById("filter-category");
+        this.filterStatus = document.getElementById("filter-status");
 
         this.form.addEventListener("submit", (e) => this.addData(e));
         this.elementsList.addEventListener("click", this.deleteData.bind(this));
         this.elementsList.addEventListener("click", this.editData.bind(this));
+        this.elementsList.addEventListener("click", this.toggleCompleted.bind(this));
+        document.getElementById("filter-button").addEventListener("click", () => this.renderData());
+        document.getElementById("clear-filters").addEventListener("click", () => this.clearFilters());
 
         this.renderData();
     }
 
 
-    saveData() {
-        localStorage.setItem("dataCrud", JSON.stringify(this.data));
-    }
+    // saveData() {
+    //     localStorage.setItem("dataCrud", JSON.stringify(this.data));
+    // }
 
     async addData(e) {
         e.preventDefault();
@@ -94,14 +99,25 @@ constructor() {
             headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
-        this.data = data;
+        const categoryFilter = this.filterCategory.value;
+        const statusFilter = this.filterStatus.value;
+
+        // this.data = data;
+        this.data = data.filter((task) => {
+            const matchesCategory = categoryFilter === "all" || task.category === categoryFilter;
+            const matchesStatus =
+                statusFilter === "all" ||
+                (statusFilter === "completed" && task.completed) ||
+                (statusFilter === "pending" && !task.completed);
+            return matchesCategory && matchesStatus;
+        });
 
         if (this.data.length === 0) {
             this.elementsList.innerHTML = "<p>No hay elementos guardados.</p>";
             return;
         }
 
-        this.data.forEach((item, index) => {
+        this.data.forEach((item) => {
             const div = document.createElement("div");
             div.classList.add("item");
             div.innerHTML = `
@@ -112,6 +128,9 @@ constructor() {
                     <div>Estado: ${item.completed ? "✔ Completada" : "⏳ Pendiente"}</div>
                 </div>
                 <div class="item-actions">
+                    <button class="toggle-complete" data-id="${item._id}">
+                        ${item.completed ? "Desmarcar" : "Completar"}
+                    </button>
                     <button class="editar" data-id="${item._id}">Editar</button>
                     <button class="eliminar" data-id="${item._id}">Eliminar</button>
                 </div>
@@ -120,6 +139,27 @@ constructor() {
             });
     }
 
+    async toggleCompleted(e) {
+        if (e.target.classList.contains("toggle-complete")) {
+        const id = e.target.dataset.id;
+        const task = this.data.find((t) => t._id === id);
+        await fetch(`${API_URL}/tasks/${id}`, {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ completed: !task.completed }),
+        });
+        this.renderData();
+        }
+    }
+
+    clearFilters() {
+        this.filterCategory.value = "all";
+        this.filterStatus.value = "all";
+        this.renderData();
+    }
 }
 
 new DataManager();
