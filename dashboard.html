@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon-crud-app.png" type="image/x-icon">
+    <title>TASKZEEN | Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>TaskZeen - Gestión de Tareas</h1>
+    </header>
+
+    <nav class="nav">
+        <img src="assets/user1.jpg" alt="">
+        <ul>
+            <li><a href="index.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="formZone" id="formZone">
+            <form class="form" id="form">
+                <p>Tarea: <input type="text" id="name" required placeholder="Ingrese el nombre de la tarea"></p>
+                <p>Descripción: <input type="text" id="description" required
+                    placeholder="Ingrese la descripción de la tarea"></p>
+                <button class="btnSend" type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <section class="data" id="data">
+            <h2>Lista de tareas</h2>
+            <div class="items-list" id="items-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

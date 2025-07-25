@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/icon-crud-app.png" type="image/x-icon">
-    <title>TASKZEEN | Gestor de Tareas</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/icon-crud-app.png" type="image/x-icon">
+  <link rel="stylesheet" href="login.css">
+  <title>TaskZeen - Login</title>
+
 </head>
 <body>
+  <div class="container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1 class="login-title">TaskZeen</h1>
+        <p class="login-subtitle">Inicia sesión en tu cuenta</p>
+      </div>
 
-    <header>
-        <h1>TaskZeen - Gestión de Tareas</h1>
-    </header>
-    
-    <main>
-        <section class="formZone" id="formZone">
-            <form class="form" id="form">
-                <p>Tarea: <input type="text" id="name" required placeholder="Ingrese el nombre de la tarea"></p>
-                <p>Descripción: <input type="text" id="description" required
-                    placeholder="Ingrese la descripción de la tarea"></p>
-                <button class="btnSend" type="submit">Guardar</button>
-            </form>
-        </section>
+      <form id="loginForm">
+        <div id="errorMessage" class="message error-message"></div>
+        <div id="successMessage" class="message success-message"></div>
 
-        <section class="data" id="data">
-            <h2>Lista de tareas</h2>
-            <div class="items-list" id="items-list"></div>
-        </section>
-    </main>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
 
-    <footer>
-        <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
-    </footer>
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" name="password" class="form-input" required>
+        </div>
 
-    <script src="app.js"></script>
+        <button type="submit" id="loginButton" class="login-button">
+          <span id="buttonText">Iniciar Sesión</span>
+        </button>
+      </form>
+
+      <div class="register-link">
+        <p>¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>2025 © Todos los derechos reservados | ❤️ Desarrollado por el TEAM#3 - ADVANCE Consortium</p>   
+  </footer>
+
+  <script src="login.js"></script>
 </body>
 </html>
