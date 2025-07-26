@@ -72,23 +72,31 @@ constructor() {
         // this.form.reset();
     }
 
-    deleteData(e) {
+    async deleteData(e) {
         if (e.target.classList.contains("eliminar")) {
-            const index = e.target.dataset.index;
-            this.data.splice(index, 1);
-            this.saveData();
-            this.renderData();
+        const id = e.target.dataset.id;
+        await fetch(`${API_URL}/tasks/${id}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        this.renderData();
         }
     }
 
-    editData(e) {
+    async editData(e) {
         if (e.target.classList.contains("editar")) {
-            const index = e.target.dataset.index;
-            this.form.name.value = this.data[index].name;
-            this.form.description.value = this.data[index].description;
-            this.data.splice(index, 1);
-            this.saveData();
-            this.renderData();
+        const id = e.target.dataset.id;
+        const task = this.data.find((t) => t._id === id);
+        document.getElementById("name").value = task.name;
+        document.getElementById("description").value = task.description;
+        document.getElementById("category").value = task.category;
+        document.getElementById("dueDate").value = task.dueDate?.slice(0, 10);
+        this.editId = id;
+        await fetch(`${API_URL}/tasks/${id}`, {
+            method: "DELETE",
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        this.renderData();
         }
     }
 
