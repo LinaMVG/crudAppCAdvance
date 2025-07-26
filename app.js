@@ -136,7 +136,7 @@ constructor() {
                     <div>Estado: ${item.completed ? "✔ Completada" : "⏳ Pendiente"}</div>
                 </div>
                 <div class="item-actions">
-                    <button class="toggle-complete" data-id="${item._id}">
+                    <button class="toggle-complete ${item.completed ? "active" : ""}" data-id="${item._id}">
                         ${item.completed ? "Desmarcar" : "Completar"}
                     </button>
                     <button class="editar" data-id="${item._id}">Editar</button>

@@ -307,6 +307,7 @@ main {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 5px;
 
   &:hover {
     transform: translateY(-2px);
@@ -327,6 +328,7 @@ main {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 5px;
 
   &:hover {
     transform: translateY(-2px);
@@ -585,6 +587,17 @@ main {
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 8px 20px rgba(237, 137, 54, 0.3);
+}
+
+/* Estado activo - Opción 1 */
+.toggle-complete.active {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 8px 20px rgba(72, 187, 120, 0.4);
+  transform: translateY(-2px);
+}
+
+.toggle-complete.active::before {
+  margin-right: 5px;
 }
 
 .toggle-complete:hover {
