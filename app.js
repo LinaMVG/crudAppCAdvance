@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:3000/api";
+// const API_URL = "http://localhost:3000/api";
+const API_URL = "http://185.194.216.149:3000/api";
 const token = localStorage.getItem("authToken");
 
 if (!token) {
