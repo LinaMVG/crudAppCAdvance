@@ -12,8 +12,7 @@ body {
   color: #333;
   display: grid;
   min-height: 100dvh;
-  grid-template-rows:
-    auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1 {
@@ -30,40 +29,6 @@ main {
   display: flex;
   flex-direction: rows;
 }
-
-/* .nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px;
-  z-index: 1;
-  position: absolute;
-  gap: 20px;
-  
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  } 
-
-  li {
-    list-style: none;
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s ease;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 10px 20px;
-      border-radius: 12px;
-
-      &:hover {
-        color: #f8fafc;
-      }
-    }
-  } */
 
 .nav {
   display: flex;
@@ -276,16 +241,16 @@ main {
   .nav {
     padding: 16px 20px;
     border-radius: 0 0 0 20px;
-    
-    img {
-      width: 36px;
-      height: 36px;
-    }
-    
-    li a {
-      padding: 10px 16px;
-      font-size: 13px;
-    }
+  }
+
+  .nav img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav li a {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }
 
@@ -314,7 +279,8 @@ main {
   letter-spacing: 0.5px;
 }
 
-.form input {
+.form input,
+.form select {
   padding: 15px 20px;
   border: 2px solid #e1e8ed;
   border-radius: 12px;
@@ -324,7 +290,8 @@ main {
   color: #333;
 }
 
-.form input:focus {
+.form input:focus,
+.form select:focus {
     outline: none;
     border-color: #667eea;
     background: white;
@@ -350,12 +317,12 @@ main {
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-  }
+.btnSend:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
 
 
@@ -364,10 +331,42 @@ main {
   padding: 40px;
   border-radius: 20px;
   width: 600px;
+}
+.data h2 {
+  font-size: 16px;
+}
 
-  h2 {
-    font-size: 16px;
-  }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.filters label {
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filters select,
+.filters button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  /* border: 1px solid #ccc; */
+  background-color: #f8fafc;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #e2e8f0;
 }
 
 .items-list {
@@ -418,7 +417,6 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-
 .eliminar {
   background: linear-gradient(135deg,rgb(234, 102, 102) 0%,rgb(253, 8, 8) 100%);
   color: white;
@@ -432,12 +430,13 @@ main {
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-
-  &:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(135deg,rgb(230, 29, 29) 0%,rgb(206, 25, 12) 100%);
-  }
 }
+
+.eliminar:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgb(230, 29, 29) 0%, rgb(206, 25, 12) 100%);
+}
+
 .editar {
   background: linear-gradient(135deg, #38b2ac 0%, #319795 100%);
   color: white;
@@ -457,6 +456,27 @@ main {
   transform: translateY(-3px);
   background: linear-gradient(135deg, #2c7a7b 0%, #285e61 100%);
 }
+
+.toggle-complete {
+  background: linear-gradient(135deg, #f6ad55 0%, #dd6b20 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(237, 137, 54, 0.3);
+}
+
+.toggle-complete:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ed8936 0%, #c05621 100%);
+}
+
 footer {
   padding: 20px;
   text-align: center;
