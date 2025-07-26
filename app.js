@@ -1,8 +1,8 @@
 const API_URL = "http://localhost:3000/api";
-const token = localStorage.getItem("token");
+const token = localStorage.getItem("authToken");
 
 if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 class DataManager{
