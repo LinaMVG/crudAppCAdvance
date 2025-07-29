@@ -1,6 +1,6 @@
 // const API_URL = process.env.URL_BACK;
-// const API_URL = "http://localhost:3000";
-const API_URL = "http://185.194.216.149:3000";
+const API_URL = "http://localhost:3000";
+// const API_URL = "http://185.194.216.149:3000";
 
 const form = document.getElementById("registerForm");
 const emailInput = document.getElementById("email");

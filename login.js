@@ -1,5 +1,5 @@
-// const API_URL = "http://localhost:3000"; // Cambia esto por tu URL de backend
-const API_URL = "http://185.194.216.149:3000";
+const API_URL = "http://localhost:3000";
+// const API_URL = "http://185.194.216.149:3000";
 
 // Elementos del DOM
 const loginForm = document.getElementById("loginForm");
